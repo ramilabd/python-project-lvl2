@@ -5,10 +5,10 @@ package-install: build
 	python3 -m pip install --user dist/*.whl
 
 # run:
-# 	poetry run brain-games
+# 	poetry run gendiff
 
-# lint:
-# 	poetry run flake8 brain_games
+lint:
+	poetry run flake8 gendiff
 
 selfcheck:
 	poetry check
