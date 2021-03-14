@@ -6,3 +6,5 @@ dist/
 
 asciinema/
 .vscode/
+
+.codeclimate.yml
