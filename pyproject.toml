@@ -1,17 +1,23 @@
 [tool.poetry]
-name = "hexlet-code"
-version = "0.1.0"
-description = "Difference calculator for yaml, json files."
 authors = ["ramilabd <ramsmart@mail.ru>"]
+description = "Difference calculator for yaml, json files."
 license = "MIT"
+name = "hexlet-code"
+packages = [
+  {include = "gendiff"},
+]
+version = "0.1.0"
+
+[tool.poetry.scripts]
+gendiff = "gendiff.scripts.gendiff:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-wemake-python-styleguide = "^0.15.2"
 pytest = "^6.2.2"
+wemake-python-styleguide = "^0.15.2"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
