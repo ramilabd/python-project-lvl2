@@ -7,12 +7,14 @@
 [![time tracker](https://wakatime.com/badge/github/ramilabd/python-project-lvl2.svg)](https://wakatime.com/badge/github/ramilabd/python-project-lvl2)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide)
 
-
 ## Description
 
-Difference calculator – a program that determines the difference between two data structures. This is the second training project from the Python-developer profession on [Hexlet.io](https://ru.hexlet.io/programs/python/projects/50).
+Difference calculator – a program that determines the difference between two
+data structures. This is the second training project from the Python-developer
+profession on [Hexlet.io](https://ru.hexlet.io/programs/python/projects/50).
 
 Utility features:
+
 * Support for different input formats: yaml, json
 * Generating a report in plain text, stylish, and json format
 
