@@ -4,8 +4,8 @@ install:
 package-install: build
 	python3 -m pip install --user dist/*.whl
 
-# run:
-# 	poetry run gendiff
+run:
+	poetry run gendiff $(arg)
 
 lint:
 	poetry run flake8 gendiff
