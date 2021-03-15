@@ -8,3 +8,5 @@ asciinema/
 .vscode/
 
 .codeclimate.yml
+
+files_for_testing/
