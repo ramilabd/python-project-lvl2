@@ -38,25 +38,23 @@ def generate_diff(file_path1, file_path2):
             file2 = json.load(file_object2)
 
     diff = []
+    diff_line = '  {0} {1}: {2}'
 
-    keys_file1 = set(file1.keys())
-    keys_file2 = set(file2.keys())
-    result_str = '  {0} {1}: {2}'
+    for key, value in file1.items():
+        if (key, value) in file2.items():
+            diff.append(diff_line.format(' ', key, value))
+        elif key in file2 and value != file2[key]:
+            diff.append(diff_line.format('-', key, file1.get(key)))
+            diff.append(diff_line.format('+', key, file2.get(key)))
 
-    for key in keys_file1 - keys_file2:
-        diff.append(result_str.format('-', key, file1.get(key)))
+    for key in file1.keys():
+        if key not in file2.keys():
+            diff.append(diff_line.format('-', key, str(file1.get(key)).lower()))
 
-    for key in keys_file2 - keys_file1:
-        diff.append(result_str.format('+', key, file2.get(key)))
+    for key in file2.keys() - file1.keys():
+        diff.append(diff_line.format('+', key, str(file2.get(key)).lower()))
 
-    for key in keys_file1 & keys_file2:
-        if file1.get(key) == file2.get(key):
-            diff.append(result_str.format(' ', key, file1.get(key)))
-        else:
-            diff.append(result_str.format('-', key, file1.get(key)))
-            diff.append(result_str.format('+', key, file2.get(key)))
-
-    return '{0}\n{1}\n{2}'.format('{', '\n'.join(diff), '}')
+    return '\n{0}\n{1}\n{2}\n'.format('{', '\n'.join(diff), '}')
 
 
 if __name__ == '__main__':
