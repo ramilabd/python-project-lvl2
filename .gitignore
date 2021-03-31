@@ -9,4 +9,6 @@ asciinema/
 
 .codeclimate.yml
 
+.pytest_cache/
 files_for_testing/
+tests/

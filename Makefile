@@ -10,16 +10,18 @@ run:
 lint:
 	poetry run flake8 gendiff
 
+test:
+	poetry run pytest
+
 selfcheck:
 	poetry check
 
-check: selfcheck lint
+check: selfcheck lint test
 
-build: check
+build: selfcheck lint test
 	poetry build
 
-publish: check
-	poetry build
+publish: build
 	poetry publish -r testpypi
 
 # brain-games:
