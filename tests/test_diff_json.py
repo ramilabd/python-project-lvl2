@@ -16,7 +16,7 @@ correct_diff = """
 }
 """
 
-def test_gen_diff():
+def test_gen_diff_json():
     file_path1 = './tests/fixtures/file_1.json'
     file_path2 = './tests/fixtures/file_2.json'
     assert gen_diff(file_path1, file_path2) == correct_diff
