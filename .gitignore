@@ -1,0 +1,18 @@
+# Виртуальное окружение и кэш uv
+.venv/
+__pycache__/
+*.pyc
+
+# Файлы сборки пакета
+dist/
+build/
+*.egg-info/
+
+# Файлы редактора/системные
+.vscode/
+.DS_Store
+
+# Тестовое покрытие
+.coverage
+coverage.xml
+.pytest_cache/
