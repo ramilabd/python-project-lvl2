@@ -15,4 +15,4 @@ build/
 # Тестовое покрытие
 .coverage
 coverage.xml
-.pytest_cache/
+.pytest_cache/demo.cast
