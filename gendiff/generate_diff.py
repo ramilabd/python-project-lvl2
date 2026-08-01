@@ -16,14 +16,14 @@ def generate_diff(file_path1, file_path2):
 
 def build_line(key, data1, data2):
     if key not in data2:
-        return "  - {0}: {1}".format(key, stringify(data1[key]))
+        return f"  - {key}: {stringify(data1[key])}"
     if key not in data1:
-        return "  + {0}: {1}".format(key, stringify(data2[key]))
+        return f"  + {key}: {stringify(data2[key])}"
     if data1[key] == data2[key]:
-        return "    {0}: {1}".format(key, stringify(data1[key]))
-    old_line = "  - {0}: {1}".format(key, stringify(data1[key]))
-    new_line = "  + {0}: {1}".format(key, stringify(data2[key]))
-    return "{0}\n{1}".format(old_line, new_line)
+        return f"    {key}: {stringify(data1[key])}"
+    old_line = f"  - {key}: {stringify(data1[key])}"
+    new_line = f"  + {key}: {stringify(data2[key])}"
+    return f"{old_line}\n{new_line}"
 
 
 def stringify(value):

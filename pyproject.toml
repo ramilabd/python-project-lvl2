@@ -15,3 +15,10 @@ build-backend = "uv_build"
 [tool.uv.build-backend]
 module-name = "gendiff"
 module-root = ""
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.16.1",
+]
