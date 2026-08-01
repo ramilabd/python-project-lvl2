@@ -16,3 +16,4 @@ build/
 .coverage
 coverage.xml
 .pytest_cache/demo.cast
+demo.cast
