@@ -1,33 +1,10 @@
+from gendiff.diff_builder import build_diff
+from gendiff.formatters import format_diff
 from gendiff.parsers import parse_file
 
 
-def generate_diff(file_path1, file_path2):
+def generate_diff(file_path1, file_path2, format_name='stylish'):
     data1 = parse_file(file_path1)
     data2 = parse_file(file_path2)
-
-    keys = sorted(set(data1) | set(data2))
-    lines = [build_line(key, data1, data2) for key in keys]
-
-    return "{\n" + "\n".join(lines) + "\n}"
-
-
-def build_line(key, data1, data2):
-    if key not in data2:
-        return f"  - {key}: {stringify(data1[key])}"
-    if key not in data1:
-        return f"  + {key}: {stringify(data2[key])}"
-    if data1[key] == data2[key]:
-        return f"    {key}: {stringify(data1[key])}"
-    old_line = f"  - {key}: {stringify(data1[key])}"
-    new_line = f"  + {key}: {stringify(data2[key])}"
-    return f"{old_line}\n{new_line}"
-
-
-def stringify(value):
-    if value is True:
-        return "true"
-    if value is False:
-        return "false"
-    if value is None:
-        return "null"
-    return str(value)
+    diff = build_diff(data1, data2)
+    return format_diff(diff, format_name)

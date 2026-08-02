@@ -4,7 +4,8 @@ from gendiff.cli import run
 
 def main():
     args = run()
-    print(generate_diff(args.first_file, args.second_file))
+    format_name = args.format or 'stylish'
+    print(generate_diff(args.first_file, args.second_file, format_name))
 
 
 if __name__ == "__main__":
