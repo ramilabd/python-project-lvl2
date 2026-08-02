@@ -1,7 +1,9 @@
 # Gendiff
 
-### Hexlet tests and linter status:
+### Hexlet tests, linter status, Quality gate status and Coverage SonarQube:
 [![Actions Status](https://github.com/ramilabd/python-project-lvl2/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/ramilabd/python-project-lvl2/actions)
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=ramilabd_python-project-lvl2&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ramilabd_python-project-lvl2)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ramilabd_python-project-lvl2&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ramilabd_python-project-lvl2)
 
 ## Описание
 
@@ -26,7 +28,7 @@ uv run gendiff first_file.json second_file.json
 Пример:
 
 ```
-$ uv run gendiff tests/fixtures/file1.json tests/fixtures/file2.json
+$ uv run gendiff tests/test_data/file1.json tests/test_data/file2.json
 {
   - follow: false
     host: hexlet.io
