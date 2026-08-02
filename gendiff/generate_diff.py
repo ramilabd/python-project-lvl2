@@ -1,12 +1,9 @@
-import json
+from gendiff.parsers import parse_file
 
 
 def generate_diff(file_path1, file_path2):
-    with open(file_path1) as file1:
-        data1 = json.load(file1)
-
-    with open(file_path2) as file2:
-        data2 = json.load(file2)
+    data1 = parse_file(file_path1)
+    data2 = parse_file(file_path2)
 
     keys = sorted(set(data1) | set(data2))
     lines = [build_line(key, data1, data2) for key in keys]

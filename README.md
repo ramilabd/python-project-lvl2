@@ -41,4 +41,4 @@ $ uv run gendiff tests/test_data/file1.json tests/test_data/file2.json
 
 ## Демонстрация
 
-[![asciicast](https://asciinema.org/a/dnarm1QJsZdGEkh0.svg)](https://asciinema.org/a/dnarm1QJsZdGEkh0)
+[![asciicast](https://asciinema.org/a/1262180.svg)](https://asciinema.org/a/1262180)
