@@ -50,5 +50,8 @@ def stringify(value, depth):
 def stringify_dict(value, depth):
     indent = " " * ((depth + 1) * INDENT_SIZE)
     closing_indent = " " * (depth * INDENT_SIZE)
-    lines = [f"{indent}{k}: {stringify(v, depth + 1)}" for k, v in value.items()]
+    lines = [
+        f"{indent}{k}: {stringify(v, depth + 1)}"
+        for k, v in value.items()
+    ]
     return "{\n" + "\n".join(lines) + f"\n{closing_indent}}}"

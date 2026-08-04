@@ -28,7 +28,10 @@ def render_node(node, path):
     if node_type == 'changed':
         old_value = stringify(node['old_value'])
         new_value = stringify(node['new_value'])
-        return [f"Property '{full_path}' was updated. From {old_value} to {new_value}"]
+        return [
+            f"Property '{full_path}' was updated. "
+            f"From {old_value} to {new_value}",
+        ]
 
     return []
 
